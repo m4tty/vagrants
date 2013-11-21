@@ -2,7 +2,7 @@ apt-get update
 apt-get -y install curl
 apt-get install unzip
 #apt-get -y install golang
-
+apt-get -y install git-core
 
 cd /home/vagrant
 
@@ -25,9 +25,11 @@ unzip go_appengine_sdk_linux_amd64-1.8.8.zip
 #tar -zxvf
 
 chown -R vagrant:vagrant /home/vagrant/go_appengine
-mod -R +xr /home/vagrant/go_appengine
+chmod -R +xr /home/vagrant/go_appengine
 
 
-echo "export PATH=$PATH:/usr/local/go/bin:/home/vagrant/go/src:/home/vagrant/go/bin:/home/vagrant/go_appengine" >> /home/vagrant/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:/vagrant/go/src:/vagrant/go/bin:/home/vagrant/go_appengine" >> /home/vagrant/.bash_profile
+echo "export GOROOT=/usr/local/go" >> /home/vagrant/.bash_profile 
+echo "export GOPATH=/vagrant/go" >> /home/vagrant/.bash_profile 
 
 source /home/vagrant/.bash_profile
