@@ -1,3 +1,2 @@
-golang/go/src
-golang/go/bin
+golang/go/**
 
